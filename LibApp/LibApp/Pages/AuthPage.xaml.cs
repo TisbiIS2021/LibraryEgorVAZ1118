@@ -31,17 +31,20 @@ namespace LibApp.Pages
 
             var stuff = App.DB.Colleague.FirstOrDefault(s => s.Phone == phone);
             var user = App.DB.User.FirstOrDefault(u => u.Phone == phone);
-            
-            if(stuff == null)
+
+            if(user != null)
             {
-                MessageBox.Show("Не тот телефон");
-                return;
+                NavigationService.Navigate(new LibraryPage());
             }
-            if(user == null)
+            if(stuff != null)
             {
-                MessageBox.Show("Не тот телефон");
-                return;
-            }
+                if(stuff.idPost == 1)
+                {
+                    NavigationService.Navigate(new StaffPage());
+                }
+            }    
+            App.LoggedCollegue = stuff;
+            App.LoggedUser = user;
         }
     }
 }

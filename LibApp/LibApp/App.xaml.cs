@@ -9,12 +9,10 @@ using LibApp.Models;
 
 namespace LibApp
 {
-    /// <summary>
-    /// Логика взаимодействия для App.xaml
-    /// </summary>
+    
     public partial class App : Application
     {
-        public static SuperBibliaDBEntities1 DB = new SuperBibliaDBEntities1();
+        public static SuperBibliaDBEntities2 DB = new SuperBibliaDBEntities2();
         public static User LoggedUser;
         public static Colleague LoggedCollegue;
     }

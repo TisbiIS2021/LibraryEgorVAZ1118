@@ -76,7 +76,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddStuffPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AuthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LibraryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -87,52 +95,58 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Author.cs">
-      <DependentUpon>LibDB.tt</DependentUpon>
+      <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AuthorBook.cs">
-      <DependentUpon>LibDB.tt</DependentUpon>
+      <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Book.cs">
-      <DependentUpon>LibDB.tt</DependentUpon>
+      <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Colleague.cs">
-      <DependentUpon>LibDB.tt</DependentUpon>
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Genre.cs">
-      <DependentUpon>LibDB.tt</DependentUpon>
+      <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IssuanceBook.cs">
-      <DependentUpon>LibDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LibDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LibDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LibDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LibDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LibDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LibDB.edmx</DependentUpon>
+      <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Post.cs">
-      <DependentUpon>LibDB.tt</DependentUpon>
+      <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Publisher.cs">
-      <DependentUpon>LibDB.tt</DependentUpon>
+      <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>LibDB.tt</DependentUpon>
+      <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>LibDB.tt</DependentUpon>
+      <DependentUpon>DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddStuffPage.xaml.cs">
+      <DependentUpon>AddStuffPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LibraryPage.xaml.cs">
+      <DependentUpon>LibraryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\StaffPage.xaml.cs">
       <DependentUpon>StaffPage.xaml</DependentUpon>
@@ -154,12 +168,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Models\LibDB.edmx">
+    <EntityDeploy Include="Models\DB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LibDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>DB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\LibDB.edmx.diagram">
-      <DependentUpon>LibDB.edmx</DependentUpon>
+    <None Include="Models\DB.edmx.diagram">
+      <DependentUpon>DB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -174,15 +188,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\LibDB.Context.tt">
+    <Content Include="Models\DB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LibDB.edmx</DependentUpon>
-      <LastGenOutput>LibDB.Context.cs</LastGenOutput>
+      <DependentUpon>DB.edmx</DependentUpon>
+      <LastGenOutput>DB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\LibDB.tt">
+    <Content Include="Models\DB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LibDB.edmx</DependentUpon>
-      <LastGenOutput>LibDB.cs</LastGenOutput>
+      <DependentUpon>DB.edmx</DependentUpon>
+      <LastGenOutput>DB.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

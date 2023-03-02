@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-Y:\Алёшин\pampam\LibApp\LibApp\obj\Debug\
+Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\
 LibApp
 none
 false
 DEBUG;TRACE
-Y:\Алёшин\pampam\LibApp\LibApp\App.xaml
-3857900146
-2-811131956
-212126263538
-18-409439901
-MainWindow.xaml;Pages\AuthPage.xaml;Pages\StaffPage.xaml;
+Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\App.xaml
+5988868744
+21659919719
+23-1664173497
+18556357398
+MainWindow.xaml;Pages\AddStuffPage.xaml;Pages\AuthPage.xaml;Pages\LibraryPage.xaml;Pages\StaffPage.xaml;
 
 True
 

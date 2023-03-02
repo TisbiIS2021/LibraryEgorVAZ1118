@@ -13,22 +13,14 @@
             <ColumnDefinition Width="100"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ListView Grid.Column="1">
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel/>
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding FIO}"/>
-                        <TextBlock Text="{Binding Phone}"/>
-                        <TextBlock Text="{Binding Post.NamePost}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <DataGrid x:Name="DGStuff" IsReadOnly="True" Grid.Column="1" AutoGenerateColumns="False" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding FIO}"/>
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding DateOfBirth}"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}"/>
+                <DataGridTextColumn Header="Должность" Binding="{Binding Post.NamePost}"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <StackPanel>
             <Button x:Name="AddBookBtn" Content="Add Book" Click="AddBookBtn_Click"/>
             <Button x:Name="AddStuffBtn" Content="Add Stuff" Click="AddStuffBtn_Click"/>
