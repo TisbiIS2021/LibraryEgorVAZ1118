@@ -57,3 +57,5 @@ Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\LibraryP
 Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\LibraryPage.baml
 Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\AddStuffPage.g.cs
 Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\AddStuffPage.baml
+Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\AddBook.g.cs
+Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\AddBook.baml

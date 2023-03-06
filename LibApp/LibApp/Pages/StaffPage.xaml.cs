@@ -22,17 +22,32 @@ namespace LibApp.Pages
         public StaffPage()
         {
             InitializeComponent();
-            DGStuff.ItemsSource = App.DB.Colleague.ToList();
         }
 
         private void AddBookBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AddBook(new Book()));
         }
 
         private void AddStuffBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddStuffPage(new Colleague(){ DateOfBirth = DateTime.Now}));
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Refresh();
+        }
+        
+        private void Refresh()
+        {
+            DGStuff.ItemsSource = App.DB.Colleague.ToList();
+
+        }
+
+        private void ListBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new LibraryPage());
         }
     }
 }

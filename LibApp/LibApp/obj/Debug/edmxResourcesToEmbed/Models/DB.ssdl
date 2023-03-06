@@ -55,7 +55,7 @@
     <Property Name="DaterReturn" Type="date" Nullable="false" />
     <Property Name="idUser" Type="int" Nullable="false" />
     <Property Name="idBook" Type="int" Nullable="false" />
-    <Property Name="idColleague" Type="int" Nullable="false" />
+    <Property Name="idColleague" Type="int" />
   </EntityType>
   <EntityType Name="Post">
     <Key>
@@ -165,7 +165,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_IssuanceBook_Colleague">
-    <End Role="Colleague" Type="Self.Colleague" Multiplicity="1" />
+    <End Role="Colleague" Type="Self.Colleague" Multiplicity="0..1" />
     <End Role="IssuanceBook" Type="Self.IssuanceBook" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Colleague">

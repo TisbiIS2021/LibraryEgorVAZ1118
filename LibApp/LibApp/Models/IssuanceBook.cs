@@ -16,10 +16,10 @@ namespace LibApp.Models
     {
         public int id { get; set; }
         public System.DateTime DateIssuance { get; set; }
-        public System.DateTime DaterReturn { get; set; }
+        public System.DateTime? DaterReturn { get; set; }
         public int idUser { get; set; }
         public int idBook { get; set; }
-        public int idColleague { get; set; }
+        public Nullable<int> idColleague { get; set; }
     
         public virtual Book Book { get; set; }
         public virtual Colleague Colleague { get; set; }
