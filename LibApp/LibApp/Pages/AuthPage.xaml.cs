@@ -42,6 +42,10 @@ namespace LibApp.Pages
                 {
                     NavigationService.Navigate(new StaffPage());
                 }
+                if(stuff.idPost == 3)
+                {
+                    NavigationService.Navigate(new LibrianPage());
+                }
             }    
             App.LoggedCollegue = stuff;
             App.LoggedUser = user;

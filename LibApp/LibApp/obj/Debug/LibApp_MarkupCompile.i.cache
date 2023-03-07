@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\App.xaml
-62094835788
+9-299897343
 21659919719
-24-859925707
+2781329309
 18556357398
-MainWindow.xaml;Pages\AddBook.xaml;Pages\AddStuffPage.xaml;Pages\AuthPage.xaml;Pages\LibraryPage.xaml;Pages\StaffPage.xaml;
+MainWindow.xaml;Pages\AddBook.xaml;Pages\AddReader.xaml;Pages\AddStuffPage.xaml;Pages\AuthPage.xaml;Pages\LibraryPage.xaml;Pages\LibrianPage.xaml;Pages\ReaderPage.xaml;Pages\StaffPage.xaml;
 
-False
+True
 

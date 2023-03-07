@@ -1,9 +1,10 @@
 ﻿
 FY:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\App.xaml;;
 FY:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\MainWindow.xaml;;
-FY:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\Pages\AuthPage.xaml;;
-FY:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\Pages\StaffPage.xaml;;
-FY:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\Pages\LibraryPage.xaml;;
-FY:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\Pages\AddStuffPage.xaml;;
 FY:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\Pages\AddBook.xaml;;
+FY:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\Pages\AddStuffPage.xaml;;
+FY:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\Pages\AuthPage.xaml;;
+FY:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\Pages\LibraryPage.xaml;;
+FY:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\Pages\LibrianPage.xaml;;
+FY:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\Pages\StaffPage.xaml;;
 
