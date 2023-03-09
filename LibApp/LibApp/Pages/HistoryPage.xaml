@@ -1,4 +1,4 @@
-﻿<Page x:Class="LibApp.Pages.LibrianPage"
+﻿<Page x:Class="LibApp.Pages.HistoryPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:LibApp.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="LibrianPage"
+      Title="HistoryPage"
       Loaded="Page_Loaded">
 
     <Grid>
@@ -14,7 +14,7 @@
             <ColumnDefinition Width="150"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ListView x:Name="LVLibrian" Grid.Column="1">
+        <ListView Grid.Column="1" x:Name="LVHistory">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
@@ -22,29 +22,20 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderThickness="2">
-                        <Border.Style>
-                            <Style TargetType="Border">
-                                <Setter Property="BorderBrush" Value="MediumPurple"/>
-                            </Style>
-                        </Border.Style>
+                    <Border BorderThickness="2" BorderBrush="MediumPurple">
                         <StackPanel>
                             <TextBlock Text="{Binding Book.BookName}"/>
                             <TextBlock Text="{Binding User.FIO}"/>
                             <TextBlock Text="{Binding DateIssuance, StringFormat=dd/MM/yyyy}"/>
                             <TextBlock Text="{Binding DaterReturn, StringFormat=dd/MM/yyyy}"/>
-                            <Button x:Name="ConBtn" Content="Confirm" Click="ConBtn_Click"/>
-                            <Button x:Name="NetBtn" Content="Не дам" Click="NetBtn_Click"/>
+                            <TextBlock Text="{Binding BookStatus.StatusName}"/>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         <StackPanel>
-            <Button x:Name="AddReadBtn" Content="Add Reader" Click="AddReadBtn_Click"/>
-            <Button x:Name="ListBookBtn" Content="List Book" Click="ListBookBtn_Click"/>
-            <Button x:Name="ShowReadBtn" Content="Show Readers" Click="ShowReadBtn_Click"/>
-            <Button x:Name="StatusPage" Content="Show Status" Click="StatusPage_Click"/>
+            <Button x:Name="GBBtn" Content="Го бак" Click="GBBtn_Click"/>
         </StackPanel>
     </Grid>
 </Page>

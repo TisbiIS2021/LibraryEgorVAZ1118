@@ -30,6 +30,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="BookStatus">
+      <EntityTypeMapping TypeName="SuperBibliaDBModel.BookStatus">
+        <MappingFragment StoreEntitySet="BookStatus">
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Colleague">
       <EntityTypeMapping TypeName="SuperBibliaDBModel.Colleague">
         <MappingFragment StoreEntitySet="Colleague">
@@ -55,6 +63,7 @@
     <EntitySetMapping Name="IssuanceBook">
       <EntityTypeMapping TypeName="SuperBibliaDBModel.IssuanceBook">
         <MappingFragment StoreEntitySet="IssuanceBook">
+          <ScalarProperty Name="idStatus" ColumnName="idStatus" />
           <ScalarProperty Name="idColleague" ColumnName="idColleague" />
           <ScalarProperty Name="idBook" ColumnName="idBook" />
           <ScalarProperty Name="idUser" ColumnName="idUser" />

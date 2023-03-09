@@ -38,8 +38,18 @@ namespace LibApp.Pages
 
         private void Refresh()
         {
-            LVBook.ItemsSource = App.DB.Book.ToList();
+            var search = App.DB.Book.ToList();
+            if (string.IsNullOrWhiteSpace(SerchTB.Text) == false)
+            {
+                search = search.Where(u => u.BookName.ToLower().Contains(SerchTB.Text.ToLower())).ToList();
+            }
+            LVBook.ItemsSource = search;
             DGBook.ItemsSource = issuanceBooks.ToList();
+            if(App.LoggedUser == null)
+            {
+                SPOf.Visibility = Visibility.Collapsed;
+                HisBtn.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void TakeBtn_Click(object sender, RoutedEventArgs e)
@@ -68,6 +78,16 @@ namespace LibApp.Pages
             }
             App.DB.IssuanceBook.AddRange(issuanceBooks);
             App.DB.SaveChanges();
+        }
+
+        private void SerchTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void HisBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new HistoryPage());
         }
     }
 }

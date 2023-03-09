@@ -27,7 +27,11 @@ namespace LibApp.Pages
 
         private void ConBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            IssuanceBook contextIssuance = (sender as Button).DataContext as IssuanceBook;
+            contextIssuance.Colleague = App.LoggedCollegue;
+            contextIssuance.idStatus = 1;
+            App.DB.SaveChanges();
+            Refresh();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -36,7 +40,7 @@ namespace LibApp.Pages
         }
         private void Refresh()
         {
-            LVLibrian.ItemsSource = App.DB.IssuanceBook.ToList();
+            LVLibrian.ItemsSource = App.DB.IssuanceBook.Where(i => i.Colleague == null).ToList();
         }
 
         private void AddReadBtn_Click(object sender, RoutedEventArgs e)
@@ -51,7 +55,20 @@ namespace LibApp.Pages
 
         private void ShowReadBtn_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new ReaderPage());
+        }
 
+        private void StatusPage_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new StatusPage());
+        }
+
+        private void NetBtn_Click(object sender, RoutedEventArgs e)
+        {
+            IssuanceBook contextIssuance = (sender as Button).DataContext as IssuanceBook;
+            App.DB.IssuanceBook.Remove(contextIssuance);
+            App.DB.SaveChanges();
+            Refresh();
         }
     }
 }

@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:LibApp.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ReaderPage">
+      Title="ReaderPage"
+      Loaded="Page_Loaded">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -17,7 +18,14 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ФИО" Binding="{Binding FIO}"/>
                 <DataGridTextColumn Header="Дата Берн" Binding="{Binding DateOfBirth}"/>
+                <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}"/>
+                <DataGridTextColumn Header="Флип фон телефон" Binding="{Binding Phone}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <StackPanel>
+            <TextBlock Text="Попуск"/>
+            <TextBox x:Name="TBSearch" TextChanged="TBSearch_TextChanged"/>
+            <Button x:Name="GBBtn" Content="Домой" Click="GBBtn_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

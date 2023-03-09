@@ -28,6 +28,7 @@ namespace LibApp.Models
         public virtual DbSet<Author> Author { get; set; }
         public virtual DbSet<AuthorBook> AuthorBook { get; set; }
         public virtual DbSet<Book> Book { get; set; }
+        public virtual DbSet<BookStatus> BookStatus { get; set; }
         public virtual DbSet<Colleague> Colleague { get; set; }
         public virtual DbSet<Genre> Genre { get; set; }
         public virtual DbSet<IssuanceBook> IssuanceBook { get; set; }

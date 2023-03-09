@@ -4,6 +4,7 @@
     <EntitySet Name="Author" EntityType="SuperBibliaDBModel.Author" />
     <EntitySet Name="AuthorBook" EntityType="SuperBibliaDBModel.AuthorBook" />
     <EntitySet Name="Book" EntityType="SuperBibliaDBModel.Book" />
+    <EntitySet Name="BookStatus" EntityType="SuperBibliaDBModel.BookStatus" />
     <EntitySet Name="Colleague" EntityType="SuperBibliaDBModel.Colleague" />
     <EntitySet Name="Genre" EntityType="SuperBibliaDBModel.Genre" />
     <EntitySet Name="IssuanceBook" EntityType="SuperBibliaDBModel.IssuanceBook" />
@@ -29,6 +30,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_IssuanceBook_Book" Association="SuperBibliaDBModel.FK_IssuanceBook_Book">
       <End Role="Book" EntitySet="Book" />
+      <End Role="IssuanceBook" EntitySet="IssuanceBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IssuanceBook_BookStatus" Association="SuperBibliaDBModel.FK_IssuanceBook_BookStatus">
+      <End Role="BookStatus" EntitySet="BookStatus" />
       <End Role="IssuanceBook" EntitySet="IssuanceBook" />
     </AssociationSet>
     <AssociationSet Name="FK_Colleague_Post" Association="SuperBibliaDBModel.FK_Colleague_Post">
@@ -77,6 +82,14 @@
     <NavigationProperty Name="Publisher" Relationship="SuperBibliaDBModel.FK_Book_Publisher" FromRole="Book" ToRole="Publisher" />
     <NavigationProperty Name="IssuanceBook" Relationship="SuperBibliaDBModel.FK_IssuanceBook_Book" FromRole="Book" ToRole="IssuanceBook" />
   </EntityType>
+  <EntityType Name="BookStatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="IssuanceBook" Relationship="SuperBibliaDBModel.FK_IssuanceBook_BookStatus" FromRole="BookStatus" ToRole="IssuanceBook" />
+  </EntityType>
   <EntityType Name="Colleague">
     <Key>
       <PropertyRef Name="id" />
@@ -110,7 +123,9 @@
     <Property Name="idUser" Type="Int32" Nullable="false" />
     <Property Name="idBook" Type="Int32" Nullable="false" />
     <Property Name="idColleague" Type="Int32" />
+    <Property Name="idStatus" Type="Int32" />
     <NavigationProperty Name="Book" Relationship="SuperBibliaDBModel.FK_IssuanceBook_Book" FromRole="IssuanceBook" ToRole="Book" />
+    <NavigationProperty Name="BookStatus" Relationship="SuperBibliaDBModel.FK_IssuanceBook_BookStatus" FromRole="IssuanceBook" ToRole="BookStatus" />
     <NavigationProperty Name="Colleague" Relationship="SuperBibliaDBModel.FK_IssuanceBook_Colleague" FromRole="IssuanceBook" ToRole="Colleague" />
     <NavigationProperty Name="User" Relationship="SuperBibliaDBModel.FK_IssuanceBook_User" FromRole="IssuanceBook" ToRole="User" />
   </EntityType>
@@ -209,6 +224,18 @@
       </Principal>
       <Dependent Role="IssuanceBook">
         <PropertyRef Name="idBook" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IssuanceBook_BookStatus">
+    <End Type="SuperBibliaDBModel.BookStatus" Role="BookStatus" Multiplicity="0..1" />
+    <End Type="SuperBibliaDBModel.IssuanceBook" Role="IssuanceBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookStatus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="IssuanceBook">
+        <PropertyRef Name="idStatus" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

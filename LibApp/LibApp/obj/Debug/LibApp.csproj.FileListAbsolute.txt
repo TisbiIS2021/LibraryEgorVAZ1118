@@ -61,3 +61,11 @@ Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\AddBook.
 Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\AddBook.baml
 Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\LibrianPage.g.cs
 Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\LibrianPage.baml
+Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\AddReader.g.cs
+Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\ReaderPage.g.cs
+Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\AddReader.baml
+Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\ReaderPage.baml
+Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\StatusPage.g.cs
+Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\StatusPage.baml
+Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\HistoryPage.g.cs
+Y:\Алёшин\pampam\LibraryEgorVAZ1118\LibApp\LibApp\obj\Debug\Pages\HistoryPage.baml

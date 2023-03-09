@@ -26,6 +26,13 @@
     <Property Name="YearPublication" Type="int" Nullable="false" />
     <Property Name="idGenre" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="BookStatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="Colleague">
     <Key>
       <PropertyRef Name="id" />
@@ -56,6 +63,7 @@
     <Property Name="idUser" Type="int" Nullable="false" />
     <Property Name="idBook" Type="int" Nullable="false" />
     <Property Name="idColleague" Type="int" />
+    <Property Name="idStatus" Type="int" />
   </EntityType>
   <EntityType Name="Post">
     <Key>
@@ -164,6 +172,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_IssuanceBook_BookStatus">
+    <End Role="BookStatus" Type="Self.BookStatus" Multiplicity="0..1" />
+    <End Role="IssuanceBook" Type="Self.IssuanceBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookStatus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="IssuanceBook">
+        <PropertyRef Name="idStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_IssuanceBook_Colleague">
     <End Role="Colleague" Type="Self.Colleague" Multiplicity="0..1" />
     <End Role="IssuanceBook" Type="Self.IssuanceBook" Multiplicity="*" />
@@ -192,6 +212,7 @@
     <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AuthorBook" EntityType="Self.AuthorBook" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookStatus" EntityType="Self.BookStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Colleague" EntityType="Self.Colleague" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IssuanceBook" EntityType="Self.IssuanceBook" Schema="dbo" store:Type="Tables" />
@@ -221,6 +242,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_IssuanceBook_Book" Association="Self.FK_IssuanceBook_Book">
       <End Role="Book" EntitySet="Book" />
+      <End Role="IssuanceBook" EntitySet="IssuanceBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IssuanceBook_BookStatus" Association="Self.FK_IssuanceBook_BookStatus">
+      <End Role="BookStatus" EntitySet="BookStatus" />
       <End Role="IssuanceBook" EntitySet="IssuanceBook" />
     </AssociationSet>
     <AssociationSet Name="FK_IssuanceBook_Colleague" Association="Self.FK_IssuanceBook_Colleague">

@@ -13,9 +13,9 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
-        <ListView Grid.Column="1" x:Name="LVBook">
+        <ListView Grid.Column="1" x:Name="LVBook" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
@@ -59,9 +59,12 @@
             </ListView.ItemTemplate>
         </ListView>
         <StackPanel>
+            <TextBlock Text="Попуск"/>
+            <TextBox x:Name="SerchTB" TextChanged="SerchTB_TextChanged"/>
             <Button x:Name="GBBtn" Content="Go Back" IsCancel="True" Click="GBBtn_Click"/>
+            <Button x:Name="HisBtn" Content="My History" Click="HisBtn_Click"/>
         </StackPanel>
-        <StackPanel Grid.Column="2">
+        <StackPanel Grid.Column="2" x:Name="SPOf" Width="150">
             <DataGrid x:Name="DGBook" IsReadOnly="True" AutoGenerateColumns="False" ColumnWidth="*">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Book" Binding="{Binding Book.BookName}"/>

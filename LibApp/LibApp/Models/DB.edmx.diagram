@@ -5,21 +5,23 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="aab953872bb14061af7a12bbda21dbf9" Name="Diagram1">
-        <EntityTypeShape EntityType="SuperBibliaDBModel.Author" Width="1.5" PointX="3" PointY="9.75" />
-        <EntityTypeShape EntityType="SuperBibliaDBModel.AuthorBook" Width="1.5" PointX="5.25" PointY="4.625" />
+        <EntityTypeShape EntityType="SuperBibliaDBModel.Author" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="SuperBibliaDBModel.AuthorBook" Width="1.5" PointX="5.25" PointY="4.5" />
         <EntityTypeShape EntityType="SuperBibliaDBModel.Book" Width="1.5" PointX="3" PointY="4.125" />
-        <EntityTypeShape EntityType="SuperBibliaDBModel.Colleague" Width="1.5" PointX="6" PointY="12.625" />
-        <EntityTypeShape EntityType="SuperBibliaDBModel.Genre" Width="1.5" PointX="0.75" PointY="1.75" />
-        <EntityTypeShape EntityType="SuperBibliaDBModel.IssuanceBook" Width="1.5" PointX="8.25" PointY="4.25" />
-        <EntityTypeShape EntityType="SuperBibliaDBModel.Post" Width="1.5" PointX="3.75" PointY="13.25" />
-        <EntityTypeShape EntityType="SuperBibliaDBModel.Publisher" Width="1.5" PointX="0.75" PointY="4.75" />
-        <EntityTypeShape EntityType="SuperBibliaDBModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="8.5" />
-        <EntityTypeShape EntityType="SuperBibliaDBModel.User" Width="1.5" PointX="6" PointY="0.75" />
+        <EntityTypeShape EntityType="SuperBibliaDBModel.BookStatus" Width="1.5" PointX="6" PointY="15.5" />
+        <EntityTypeShape EntityType="SuperBibliaDBModel.Colleague" Width="1.5" PointX="6" PointY="9" />
+        <EntityTypeShape EntityType="SuperBibliaDBModel.Genre" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="SuperBibliaDBModel.IssuanceBook" Width="1.5" PointX="8.25" PointY="4" />
+        <EntityTypeShape EntityType="SuperBibliaDBModel.Post" Width="1.5" PointX="3.75" PointY="9.625" />
+        <EntityTypeShape EntityType="SuperBibliaDBModel.Publisher" Width="1.5" PointX="0.75" PointY="1.625" />
+        <EntityTypeShape EntityType="SuperBibliaDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.25" />
+        <EntityTypeShape EntityType="SuperBibliaDBModel.User" Width="1.5" PointX="6" PointY="12.5" />
         <AssociationConnector Association="SuperBibliaDBModel.FK_AuthorBook_Author" />
         <AssociationConnector Association="SuperBibliaDBModel.FK_AuthorBook_Book" />
         <AssociationConnector Association="SuperBibliaDBModel.FK_Book_Genre" />
         <AssociationConnector Association="SuperBibliaDBModel.FK_Book_Publisher" />
         <AssociationConnector Association="SuperBibliaDBModel.FK_IssuanceBook_Book" />
+        <AssociationConnector Association="SuperBibliaDBModel.FK_IssuanceBook_BookStatus" />
         <AssociationConnector Association="SuperBibliaDBModel.FK_Colleague_Post" />
         <AssociationConnector Association="SuperBibliaDBModel.FK_IssuanceBook_Colleague" />
         <AssociationConnector Association="SuperBibliaDBModel.FK_IssuanceBook_User" />
